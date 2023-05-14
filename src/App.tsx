@@ -4,6 +4,7 @@ import "./App.css";
 import FetchApiUseEffect from "./container/FetchApiUseEffect";
 import InputUseEffect from "./container/InputUseEffect";
 import List from "./container/List";
+import ListArray from "./container/ListArray";
 
 function App() {
 
@@ -12,6 +13,8 @@ function App() {
     <InputUseEffect/>
     <hr />
     <List/>
+    <hr />
+    <ListArray/>
   </div>;
 }
 

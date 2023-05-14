@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import uuid from 'react-uuid';
 
 function List() {
@@ -7,6 +7,9 @@ function List() {
     { title: "mango", id: 2 },
     { title: "grapes", id: 3 },
   ]);
+
+  
+console.log("useEffect",fruits);
 
   const handleFruitClick = () => {
     setFruits([
@@ -18,7 +21,6 @@ function List() {
     ]);
   };
 
-  console.log(fruits);
   return (
     <div>
       <h1>List</h1>
