@@ -18,12 +18,24 @@ const vegetablesList = [
 
 function ListArray() {
   const [vegetables, setVegetables] = useState(vegetablesList);
+  const [title,setTitle] = useState("")
 
   const handleVegetableClick=()=>{
-     setVegetables([...vegetables,{title:'onion',id:uuid()}])
+     setVegetables([...vegetables,{title,id:uuid()}])
   }
 
-  console.log("vegan", vegetablesList);
+  const handleChange = (e) =>{
+    setTitle(e.target.value)
+  }
+
+  const handleSubmit=(e)=>{
+      e.preventDefault()
+      console.log(title)
+      handleVegetableClick(title)
+      setTitle("")
+  }
+
+
   return (
     <div>
       <h1>ListArray</h1>
@@ -31,7 +43,11 @@ function ListArray() {
         return <li key={vegetable.id}>{vegetable.title}</li>
       })}
       <br/>
-        <button onClick={handleVegetableClick}>Add Vegetable</button>
+        {/* <button onClick={handleVegetableClick}>Add Vegetable</button> */}
+        <form  onSubmit={handleSubmit}>
+            <input type="text" value={title} onChange={handleChange}/>
+            <button>Add</button>
+        </form>
     </div>
   );
 }
