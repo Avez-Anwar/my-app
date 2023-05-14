@@ -3,12 +3,15 @@ import logo from "./logo.svg";
 import "./App.css";
 import FetchApiUseEffect from "./container/FetchApiUseEffect";
 import InputUseEffect from "./container/InputUseEffect";
+import List from "./container/List";
 
 function App() {
 
   return <div className="App">
     <FetchApiUseEffect/>
     <InputUseEffect/>
+    <hr />
+    <List/>
   </div>;
 }
 
